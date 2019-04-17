@@ -1,0 +1,19 @@
+{
+  "name": "fracs",
+  "version": "1.0.0",
+  "description": "Um simples bot feito especialmente para o server Coffee Lab",
+  "main": "index.js",
+  "scripts": {
+    "start" : "node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hirop-q/fracs.git"
+  },
+  "author": "hirop-q",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hirop-q/fracs/issues"
+  },
+  "homepage": "https://github.com/hirop-q/fracs#readme"
+}
