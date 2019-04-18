@@ -7,6 +7,7 @@ exports.run = (bot, message, args) => {
 	let reason = args.join(" ").slice(22); // diga o motivo
 
 	if (!member) return message.reply("pfvr diga qual membro devo mutar");
+	if (!message.member.hasPermissions("MANAGE_MESSAGES")) return message.reply("permissão negada!");
 	if (member.hasPermissions("MANAGE_MESSAGES")) return message.reply("não posso muta-lo");
 
 	const muteRole = message.guild.roles.find(`name`, "muted"); // pegando o cargo muted do server
