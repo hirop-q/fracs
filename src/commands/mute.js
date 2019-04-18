@@ -9,7 +9,8 @@ exports.run = (bot, message, args) => {
 	if (!member) return message.reply("pfvr diga qual membro devo mutar");
 	if (!message.member.hasPermissions("MANAGE_MESSAGES")) return message.reply("permissão negada!");
 	if (member.hasPermissions("MANAGE_MESSAGES")) return message.reply("não posso muta-lo");
-
+	if (!reason) return message.reply("pfvr diga o motivo do mute");
+	
 	const muteRole = message.guild.roles.find(`name`, "muted"); // pegando o cargo muted do server
 
 	const embedMute = new Discord.RichEmbed() // criando o embed
@@ -18,7 +19,7 @@ exports.run = (bot, message, args) => {
 	.addField("Motivo", `${reason}`)
 	.addField("Administrador", `<@${message.author.id}>`)
 	.setColor("#09ff7d")
-
+	
 	member.addRole(muteRole);
 	message.guild.channels.get("566798533919768578").send(embedMute); // mandando mensagem para o chat "modlog"
 }
